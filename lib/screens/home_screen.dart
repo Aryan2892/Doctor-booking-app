@@ -1,5 +1,7 @@
+import 'package:doctor_app/shared/widgets/avatars/circle_avatar_with_text.dart';
 import 'package:doctor_app/shared/widgets/titles/section_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:models/models.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -121,9 +123,23 @@ class _DoctorCategories extends StatelessWidget {
           title: 'Categories',
           action: 'See all',
           onPressed: () {},
-        )
+        ),
 
         //Icons
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: DoctorCategory.values
+              .take(5)
+              .map(
+                (category) => Expanded(
+                  child: CircleAvatarWithTextLabel(
+                    icon: category.icon,
+                    label: category.name,
+                  ),
+                ),
+              )
+              .toList(),
+        ),
       ],
     );
   }

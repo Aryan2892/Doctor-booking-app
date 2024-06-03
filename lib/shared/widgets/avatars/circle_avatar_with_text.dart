@@ -14,23 +14,23 @@ class CircleAvatarWithTextLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
     final colorScheme = Theme.of(context).colorScheme;
     return GestureDetector(
       onTap: onTap,
       child: Column(
         children: [
-          CircleAvatar(radius: 24,
-          backgroundColor: colorScheme.primary,
-          foregroundColor: colorScheme.onPrimary,
-          child: Icon(icon),
+          CircleAvatar(
+            radius: 24,
+            backgroundColor: colorScheme.primary,
+            foregroundColor: colorScheme.onPrimary,
+            child: Icon(icon),
           ),
           const SizedBox(height: 8),
-          Text(label, 
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-          style: textTheme.bodySmall!.copyWith(color: colorScheme.secondary,),),
-      
+          Text(
+            label,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
         ],
       ),
     );
